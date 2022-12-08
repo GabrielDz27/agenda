@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pnlPrincipal" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ifsc.tds.alexsander.gabriel.gustavo.controller.ContatoController">
+   <children>
+      <SplitPane fx:id="pnlDivisao" dividerPositions="0.3562" prefHeight="400.0" prefWidth="600.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="210.0">
+               <children>
+                  <TableView fx:id="tbvAgenda" prefHeight="398.0" prefWidth="210.0">
+                    <columns>
+                      <TableColumn fx:id="tbcCodigo" minWidth="0.0" prefWidth="104.5" text="Código" />
+                      <TableColumn fx:id="tbcNome" prefWidth="104.5" text="Nome" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="pnlMenu" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <Label fx:id="lblDetalhes" layoutX="14.0" layoutY="14.0" text="Detalhes" />
+                  <GridPane fx:id="pnlDetalhes" layoutX="14.0" layoutY="87.0" prefHeight="117.0" prefWidth="371.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label fx:id="lblNome" text="Nome">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Label fx:id="lblTelefone" text="Telefone" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="24.0" />
+                           </font></Label>
+                        <Label fx:id="lblEmail" text="Email" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lblValorNome" GridPane.columnIndex="1" />
+                        <Label fx:id="lblValorTelefone" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="lblValorEmail" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <ButtonBar fx:id="barBotoes" layoutX="112.0" layoutY="344.0" prefHeight="40.0" prefWidth="0.0">
+                    <buttons>
+                      <Button fx:id="btnIncluir" mnemonicParsing="false" onAction="#onClickBtnIncluir" text="Incluir">
+                           <tooltip>
+                              <Tooltip fx:id="tlpIncluir" text="Incluir" />
+                           </tooltip></Button>
+                        <Button fx:id="btnEditar" mnemonicParsing="false" onAction="#onClickBtnEditar" text="Editar">
+                           <tooltip>
+                              <Tooltip fx:id="tlpEditar" text="Editar" />
+                           </tooltip></Button>
+                        <Button fx:id="btnExcluir" mnemonicParsing="false" onAction="#onClickBtnExcluir" text="Excluir">
+                           <tooltip>
+                              <Tooltip fx:id="tlpExcluir" text="Excluir" />
+                           </tooltip></Button>
+                    </buttons>
+                  </ButtonBar>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
